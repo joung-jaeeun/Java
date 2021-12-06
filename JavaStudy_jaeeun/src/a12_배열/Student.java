@@ -1,5 +1,6 @@
 package a12_¹è¿­;
 
+
 public class Student {
 	private String name;
 	private int year;
@@ -17,6 +18,7 @@ public class Student {
 	public void setName(String name) {
 		this.name = name;
 	}
+
 
 
 
