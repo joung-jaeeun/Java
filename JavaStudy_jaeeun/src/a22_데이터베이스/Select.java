@@ -17,6 +17,7 @@ public class Select {
 	ResultSet rs = null;
 	String sql= null;
 	
+	
 	try {
 		con = pool.getConnection();
 		sql = "select id, username, password,name,email from user_mst";
@@ -30,14 +31,17 @@ public class Select {
 			System.out.println(rs.getString(2));
 			System.out.println(rs.getString(3));
 			System.out.println(rs.getString(4));
-			System.out.println(rs.getString(5));
+			System.out.print(rs.getString(5));
 			
 		}
 		
 		
 	} catch (Exception e) {
 		e.printStackTrace();
-	}		
+	}finally {
+		pool.freeConnection(con, pstmt, rs);
+		
+	}
 	}
 
 }
