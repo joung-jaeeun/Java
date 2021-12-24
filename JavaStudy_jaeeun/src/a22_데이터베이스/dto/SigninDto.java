@@ -1,28 +1,27 @@
-package a22_데이터베이스;
+package a22_데이터베이스.dto;
 
+import a22_데이터베이스.domain.user.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 
-public class SignupDto {
+public class SigninDto {
 	private String username;
 	private String password;
-	private String name;
-	private String email;
+
 	
 	
 	public User toEntity() {
 		return User.builder()
 				.username(username)
 				.password(password)
-				.name(name)
-				.email(email)
 				.build();
+				
+	
+	
 	}
-	
-	
 }
