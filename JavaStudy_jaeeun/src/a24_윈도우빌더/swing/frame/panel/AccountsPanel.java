@@ -1,0 +1,23 @@
+package a24_À©µµ¿ìºô´õ.swing.frame.panel;
+
+import java.awt.CardLayout;
+
+import javax.swing.JPanel;
+
+public class AccountsPanel extends JPanel {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	/**
+	 * Create the panel.
+	 */
+	public AccountsPanel(JPanel mainPanel, CardLayout mainCard) {
+		setLayout(null);
+		setSize(1000,600);
+
+	}
+
+}
