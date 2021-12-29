@@ -44,6 +44,7 @@ public class MainController extends JFrame {
 		mainCard = new CardLayout(0, 0);
 		mainPanel.setLayout(mainCard);
 		mainPanel.setSize(1000,600);
+		
 		setContentPane(mainPanel);
 		
 		JPanel welcomPanel = new WelcomPanel(mainPanel, mainCard);
@@ -52,14 +53,20 @@ public class MainController extends JFrame {
 		JPanel signinPanel = new SigninPanel(mainPanel, mainCard);
 		mainPanel.add(signinPanel, "signinPanel");
 		
-		JPanel signupPanel = new SignupPanel(mainPanel, mainCard);
+		SignupPanel signupPanel = SignupPanel.getInstance();
+		signupPanel.setCardLayout(mainPanel, mainCard);
 		mainPanel.add(signupPanel, "signupPanel");
 		
-		JPanel indexPanel = new IndexPanel(mainPanel, mainCard);
+		IndexPanel indexPanel = IndexPanel.getInstance();
+		indexPanel.setCardLayout(mainPanel, mainCard);
 		mainPanel.add(indexPanel, "indexPanel");
 		
-		JPanel accountsPanel = new AccountsPanel(mainPanel, mainCard);
+		AccountsPanel accountsPanel = AccountsPanel.getInstance();
+		accountsPanel.setCardLayout(mainPanel, mainCard);
 		mainPanel.add(accountsPanel, "accountsPanel");
+		
+		JPanel panel = new JPanel();
+		mainPanel.add(panel, "name_26744048052600");
 		
 		
 	}

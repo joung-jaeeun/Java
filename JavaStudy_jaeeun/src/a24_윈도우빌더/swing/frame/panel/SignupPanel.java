@@ -6,17 +6,28 @@ import javax.swing.JPanel;
 
 public class SignupPanel extends JPanel {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * Create the panel.
-	 */
-	public SignupPanel(JPanel mainPanel, CardLayout mainCard) {
+	private static SignupPanel instance = new SignupPanel();
+	
+	private JPanel mainPane;
+	private CardLayout mainCard;
+	
+	private SignupPanel() {
 		setLayout(null);
-		setSize(1000,600);
+		setSize(1000, 600);
+	}
+	
+	public static SignupPanel getInstance() {
+		if(instance == null) {
+			instance = new SignupPanel();
+		}
+		return instance;
+	}
+	
+	public void setCardLayout(JPanel mainPanel, CardLayout mainCard) {
+		this.mainPane = mainPanel;
+		this.mainCard = mainCard;
 	}
 
 }

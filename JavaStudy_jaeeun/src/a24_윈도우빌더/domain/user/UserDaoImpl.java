@@ -53,7 +53,7 @@ public class UserDaoImpl implements UserDao{
 			sql = "select count(username) from user_mst where username =?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, username);
-			rs = pstmt.executeQuery();
+	 		rs = pstmt.executeQuery();
 			
 			
 			
@@ -151,5 +151,40 @@ public class UserDaoImpl implements UserDao{
 	
 	
 	return user;
+	}
+
+
+
+	@Override
+	public int updateProfileById(User user) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		String sql = null;
+		int result = 0;
+		
+		try {
+			con = pool.getConnection();
+			sql = "update user_mst set name = ?, email = ?, update_date = now(_) where id =?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, user.getName());
+			pstmt.setString(2, user.getEmail());
+			pstmt.setInt(3, user.getId());
+			result = pstmt.executeUpdate();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return result;
+				
+	}
+	
+
+
+
+	@Override
+	public int updatePasswordById(User user) {
+		
+		return 0;
 	}
 }

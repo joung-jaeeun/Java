@@ -1,19 +1,16 @@
 package a24_À©µµ¿ìºô´õ.domain.user;
 
+import java.util.Date;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
-import java.util.Date;
-
-@Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-
-
+@Data
 public class User {
 	private int id;
 	private String username;
@@ -22,6 +19,4 @@ public class User {
 	private String email;
 	private Date create_date;
 	private Date update_date;
-	
-	
 }

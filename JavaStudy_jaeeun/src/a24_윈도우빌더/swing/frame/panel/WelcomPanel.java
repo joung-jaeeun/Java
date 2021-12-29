@@ -1,4 +1,4 @@
-package a24_¿©µµøÏ∫Ù¥ı.swing.frame.panel;
+package a24_ÏúàÎèÑÏö∞ÎπåÎçî.swing.frame.panel;
 
 import java.awt.CardLayout;
 import java.awt.Font;
@@ -10,18 +10,16 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.SwingConstants;
 
-import a24_¿©µµøÏ∫Ù¥ı.swing.frame.MainController;
-
 public class WelcomPanel extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 
 	public WelcomPanel(JPanel mainPanel, CardLayout mainCard) {
 		setLayout(null);
-		setSize(1000,600);
+		setSize(1000, 600);
 		
 		JLabel welcomTitle = new JLabel("JAVA \uC2A4\uC719 \uC218\uC5C5");
-		welcomTitle.setFont(new Font("∏º¿∫ ∞ÌµÒ", Font.BOLD, 20));
+		welcomTitle.setFont(new Font("ÎßëÏùÄ Í≥†Îîï", Font.BOLD, 20));
 		welcomTitle.setHorizontalAlignment(SwingConstants.CENTER);
 		welcomTitle.setBounds(361, 141, 256, 57);
 		add(welcomTitle);
@@ -33,7 +31,7 @@ public class WelcomPanel extends JPanel {
 				mainCard.show(mainPanel, "signinPanel");
 			}
 		});
-		startBtn.setBounds(429, 402, 97, 23);
+		startBtn.setBounds(444, 432, 97, 23);
 		add(startBtn);
 
 	}
